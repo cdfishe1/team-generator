@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/cdfishe1/team-generator/issues"
   },
-  "homepage": "https://github.com/cdfishe1/team-generator#readme"
+  "homepage": "https://github.com/cdfishe1/team-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
 }
