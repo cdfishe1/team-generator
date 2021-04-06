@@ -1,0 +1,23 @@
+{
+  "name": "team-generator",
+  "version": "1.0.0",
+  "description": "accepts user input to generate an html page of a development team consisting of manager, engineers, and interns.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdfishe1/team-generator.git"
+  },
+  "author": "Charles Fisher",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cdfishe1/team-generator/issues"
+  },
+  "homepage": "https://github.com/cdfishe1/team-generator#readme"
+}
