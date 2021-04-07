@@ -7,12 +7,12 @@ describe('Employee', () => {
         expect(new Employee("Charles").getName()).toBe("Charles");
     });
 
-    //fails
+    //passes
     it("getId returns id", () => {
         expect(new Employee("Charles", "123").getId()).toBe("123");
     });
 
-    //fails
+    //passes
     it("getEmail returns email address", () => {
         expect(new Employee("Charles", "123", "cdfishe1@mail.com").getEmail()).toBe("cdfishe1@mail.com");
     });
