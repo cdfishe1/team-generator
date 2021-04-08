@@ -8,7 +8,7 @@ const Manager = require('./lib/Manager');
 const managerQuestions = async function(){
 
  const newManager = new Manager();
- const createManager = await newManager.promptManager();
+ await newManager.promptManager();
 
 };
 
