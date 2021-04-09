@@ -15,7 +15,7 @@ const inquirer = require('inquirer');
 // managerQuestions();
 
 
-
+//Begin manager prompt
 inquirer
   .prompt([
     {
@@ -49,7 +49,7 @@ inquirer
     addTeamMember();
 });
 
-
+//Asks to create another team member
 const addTeamMember = () => {
     inquirer
         .prompt([
@@ -71,6 +71,7 @@ const addTeamMember = () => {
         });
 };
 
+//Prompts to create engineer
 const createEngineer = () => {
     inquirer
         .prompt([
@@ -107,6 +108,7 @@ const createEngineer = () => {
         });
 }
 
+//Prompts to create intern
 const createIntern = () => {
     inquirer
         .prompt([
@@ -143,6 +145,7 @@ const createIntern = () => {
         });
 }
 
+//Asks if addtional team members should be added
 const moreTeamMembers = () => {
     inquirer
         .prompt([
