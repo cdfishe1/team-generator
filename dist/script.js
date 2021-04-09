@@ -1,7 +1,7 @@
-const Manager = require('../lib/Manager');
+// const Manager = require('../lib/Manager');
 
-const createManager = async data => {
-    await data;
+const createCard = data => {
+    
     const resultsEl = document.querySelector('#results');
     const cardEl = document.createElement('div');
     cardEl.setAttribute('class', 'card');
@@ -41,6 +41,5 @@ const createManager = async data => {
     console.log('This is pulling data');
 }
 
-createManager();
 
-module.exports = createManager;
+module.exports = createCard;
