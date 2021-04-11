@@ -8,7 +8,7 @@ const createCard = teamArray => {
     for (let i = 0; i < teamArray.length; i++) {
 
         if (teamArray[i].getRole() === 'Manager') {
-            cards.push(` <div class="card" style="width: 18rem;">
+            cards.push(` <div class="card" style="width: 18rem; display: inline-block">
             <div class="card-header bg-primary">
               <p class='text-light'>Name: ${teamArray[i].name}</p>
               <p class='text-light'>Role: manager</p>
@@ -21,7 +21,7 @@ const createCard = teamArray => {
           </div>`)
 
         } else if (teamArray[i].getRole() === "Engineer") {
-            cards.push(` <div class="card" style="width: 18rem;">
+            cards.push(` <div class="card" style="width: 18rem; display: inline-block">
         <div class="card-header bg-primary">
           <p class='text-light'>Name: ${teamArray[i].name}</p>
           <p class='text-light'>Role: engineer</p>
@@ -33,7 +33,7 @@ const createCard = teamArray => {
         </ul>
       </div>`)
         } else {
-          cards.push(` <div class="card" style="width: 18rem;">
+          cards.push(` <div class="card" style="width: 18rem; display: inline-block">
       <div class="card-header bg-primary">
         <p class='text-light'>Name: ${teamArray[i].name}</p>
         <p class='text-light'>Role: intern</p>
@@ -61,13 +61,13 @@ const createCard = teamArray => {
         <title>Development Team Roster</title>
     </head>
     <body>
-        <header class="jumbotron sticky-top bg-primary py-3 text-center">
+        <header class="jumbotron sticky-top bg-primary py-3 text-center mb-2">
             <h1 class='text-light'>My Team</h1>
           </header>
     
         <main>
             <div class='container'>
-            ${cards.join(' ')}
+                ${cards.join(' ')}  
             </div>
             
         </main>
