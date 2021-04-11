@@ -29,7 +29,7 @@ const createCard = teamArray => {
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${teamArray[i].id}</li>
           <li class="list-group-item">Email: <a href="mailto:${teamArray[i].email}">${teamArray[i].email}</a></li>
-          <li class="list-group-item">GitHub: ${teamArray[i].github}</li>
+          <li class="list-group-item">GitHub: <a href="https://github.com/${teamArray[i].github}" target="_blank">${teamArray[i].github}</a></li>
         </ul>
       </div>`)
         } else {
