@@ -15,7 +15,7 @@ const createCard = teamArray => {
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">ID: ${teamArray[i].id}</li>
-              <li class="list-group-item">Email: ${teamArray[i].email}</li>
+              <li class="list-group-item">Email: <a href="mailto:${teamArray[i].email}">${teamArray[i].email}</a></li>
               <li class="list-group-item">Office Number: ${teamArray[i].officeNumber}</li>
             </ul>
           </div>`)
@@ -28,7 +28,7 @@ const createCard = teamArray => {
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${teamArray[i].id}</li>
-          <li class="list-group-item">Email: ${teamArray[i].email}</li>
+          <li class="list-group-item">Email: <a href="mailto:${teamArray[i].email}">${teamArray[i].email}</a></li>
           <li class="list-group-item">GitHub: ${teamArray[i].github}</li>
         </ul>
       </div>`)
@@ -40,7 +40,7 @@ const createCard = teamArray => {
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${teamArray[i].id}</li>
-        <li class="list-group-item">Email: ${teamArray[i].email}</li>
+        <li class="list-group-item">Email: <a href="mailto:${teamArray[i].email}">${teamArray[i].email}</a></li>
         <li class="list-group-item">School: ${teamArray[i].school}</li>
       </ul>
     </div>`)
