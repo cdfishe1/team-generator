@@ -9,7 +9,7 @@ const createCard = teamArray => {
 
         if (teamArray[i].getRole() === 'Manager') {
             cards.push(` <div class="card" style="width: 18rem; display: inline-block">
-            <div class="card-header bg-primary">
+            <div class="card-header bg-danger">
               <p class='text-light'>Name: ${teamArray[i].name}</p>
               <p class='text-light'><i class="fas fa-mug-hot" style='margin-right: 0.5vw;'></i>Manager</p>
             </div>
@@ -22,7 +22,7 @@ const createCard = teamArray => {
 
         } else if (teamArray[i].getRole() === "Engineer") {
             cards.push(` <div class="card" style="width: 18rem; display: inline-block">
-        <div class="card-header bg-primary">
+        <div class="card-header bg-success">
           <p class='text-light'>Name: ${teamArray[i].name}</p>
           <p class='text-light'><i class="fas fa-laptop-code " style='margin-right: 0.5vw;'></i>Engineer</p>
         </div>
@@ -34,9 +34,9 @@ const createCard = teamArray => {
       </div>`)
         } else {
           cards.push(` <div class="card" style="width: 18rem; display: inline-block">
-      <div class="card-header bg-primary">
-        <p class='text-light'>Name: ${teamArray[i].name}</p>
-        <p class='text-light'><i class="fas fa-graduation-cap" style='margin-right: 0.5vw;'></i>Intern</p>
+      <div class="card-header bg-warning">
+        <p class='text-dark'>Name: ${teamArray[i].name}</p>
+        <p class='text-dark'><i class="fas fa-graduation-cap" style='margin-right: 0.5vw;'></i>Intern</p>
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${teamArray[i].id}</li>
