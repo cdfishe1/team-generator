@@ -3,13 +3,13 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const inquirer = require('inquirer');
-const managerCard = require('./dist/managerCard');
-
+const createCard = require('./dist/createCard');
 const fs = require('fs');
-const util = require('util');
+
+// const util = require('util');
 // const writeFileAsync = util.promisify(fs.writeFile);
 // const fs = require('fs');
-const createCard = require('./dist/createCard');
+
 
 let team = [];
 

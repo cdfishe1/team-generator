@@ -16,7 +16,7 @@ const createCard = teamArray => {
             <ul class="list-group list-group-flush">
               <li class="list-group-item">ID: ${teamArray[i].id}</li>
               <li class="list-group-item">Email: ${teamArray[i].email}</li>
-              <li class="list-group-item">Office Number ${teamArray[i].officeNumber}</li>
+              <li class="list-group-item">Office Number: ${teamArray[i].officeNumber}</li>
             </ul>
           </div>`)
 
@@ -29,7 +29,7 @@ const createCard = teamArray => {
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${teamArray[i].id}</li>
           <li class="list-group-item">Email: ${teamArray[i].email}</li>
-          <li class="list-group-item">GitHub ${teamArray[i].github}l</li>
+          <li class="list-group-item">GitHub: ${teamArray[i].github}l</li>
         </ul>
       </div>`)
         }
