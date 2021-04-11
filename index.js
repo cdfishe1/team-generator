@@ -118,42 +118,42 @@ const createEngineer = () => {
         });
 }
 
-// //Prompts to create intern
-// const createIntern = () => {
-//     inquirer
-//         .prompt([
-//             {
-//             type: 'input',
-//             name: 'name',
-//             message: "What is the intern's name?",
-//             },
-//             {
-//             type: 'input',
-//             message: "What is the intern's ID number?",
-//             name: 'id',
+//Prompts to create intern
+const createIntern = () => {
+    inquirer
+        .prompt([
+            {
+            type: 'input',
+            name: 'name',
+            message: "What is the intern's name?",
+            },
+            {
+            type: 'input',
+            message: "What is the intern's ID number?",
+            name: 'id',
             
-//             },
-//             {
-//             type: 'input',
-//             message: "What is the intern's email address?",
-//             name: 'email',
+            },
+            {
+            type: 'input',
+            message: "What is the intern's email address?",
+            name: 'email',
             
-//             },
+            },
 
-//             {
-//                 type: 'input',
-//                 message: "What is the intern's school?",
-//                 name: 'github',
+            {
+                type: 'input',
+                message: "What is the intern's school?",
+                name: 'school',
             
-//             },
-//         ])
-//         .then((data) => {
-//             let intern = new Intern(data.name, data.id, data.email, data.school);
-//             createTeam(intern);
-//             moreTeamMembers();
+            },
+        ])
+        .then((data) => {
+            let intern = new Intern(data.name, data.id, data.email, data.school);
+            team.push(intern);
+            moreTeamMembers();
             
-//         });
-// }
+        });
+}
 
 //Asks if addtional team members should be added
 const moreTeamMembers = () => {

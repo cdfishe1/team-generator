@@ -23,16 +23,28 @@ const createCard = teamArray => {
         } else if (teamArray[i].getRole() === "Engineer") {
             cards.push(` <div class="card" style="width: 18rem;">
         <div class="card-header bg-primary">
-          <p class='text-light'>${teamArray[i].name}</p>
+          <p class='text-light'>Name: ${teamArray[i].name}</p>
           <p class='text-light'>Role: engineer</p>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${teamArray[i].id}</li>
           <li class="list-group-item">Email: ${teamArray[i].email}</li>
-          <li class="list-group-item">GitHub: ${teamArray[i].github}l</li>
+          <li class="list-group-item">GitHub: ${teamArray[i].github}</li>
         </ul>
       </div>`)
-        }
+        } else {
+          cards.push(` <div class="card" style="width: 18rem;">
+      <div class="card-header bg-primary">
+        <p class='text-light'>Name: ${teamArray[i].name}</p>
+        <p class='text-light'>Role: intern</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">ID: ${teamArray[i].id}</li>
+        <li class="list-group-item">Email: ${teamArray[i].email}</li>
+        <li class="list-group-item">School: ${teamArray[i].school}</li>
+      </ul>
+    </div>`)
+      }
 
 
     }
