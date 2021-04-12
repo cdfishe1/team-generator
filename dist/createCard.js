@@ -1,7 +1,6 @@
 //Guest TA Tom McCarthy helped develop this script for which I am very grateful!
 
 const createCard = teamArray => {
-  console.log(teamArray);
 
   let cards = []
 

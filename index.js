@@ -14,50 +14,75 @@ const fs = require('fs');
 let team = [];
 
 
-
-//Begin manager prompt
-inquirer
-  .prompt([
-    {
-      type: 'input',
-      name: 'name',
-      message: "What is the manager's name?",
-    },
-    {
-      type: 'input',
-      message: "What is the manager's ID number?",
-      name: 'id',
-      
-    },
-    {
-      type: 'input',
-      message: "What is the manager's email address?",
-      name: 'email',
-    
-    },
-
-    {
+const init = () => {
+    inquirer
+    .prompt([
+      {
         type: 'input',
-        message: "What is the manager's office number?",
-        name: 'office',
+        name: 'name',
+        message: "What is the manager's name?",
+      },
+      {
+        type: 'input',
+        message: "What is the manager's ID number?",
+        name: 'id',
+        
+      },
+      {
+        type: 'input',
+        message: "What is the manager's email address?",
+        name: 'email',
       
       },
-  ])
-  .then((data) => {
-    let manager = new Manager(data.name, data.id, data.email, data.office);
-    team.push(manager);
-    addTeamMember();
-    
-  //  var fakedHtml =  createCard(manager);
-  //   fs.writeFileSync('manager.html', fakedHtml, function(err) {
+  
+      {
+          type: 'input',
+          message: "What is the manager's office number?",
+          name: 'office',
+        
+        },
+    ])
+    .then((data) => {
+      let manager = new Manager(data.name, data.id, data.email, data.office);
+      team.push(manager);
+      addTeamMember();
+      
+  });
+}
 
-  //   })
-    //team.push(manager);
-     // .then(() => console.log('Successfully wrote to README.md'))
-      //.catch((err) => console.error(err));
-    // addTeamMember();
+// inquirer
+//   .prompt([
+//     {
+//       type: 'input',
+//       name: 'name',
+//       message: "What is the manager's name?",
+//     },
+//     {
+//       type: 'input',
+//       message: "What is the manager's ID number?",
+//       name: 'id',
+      
+//     },
+//     {
+//       type: 'input',
+//       message: "What is the manager's email address?",
+//       name: 'email',
     
-});
+//     },
+
+//     {
+//         type: 'input',
+//         message: "What is the manager's office number?",
+//         name: 'office',
+      
+//       },
+//   ])
+//   .then((data) => {
+//     let manager = new Manager(data.name, data.id, data.email, data.office);
+//     team.push(manager);
+//     addTeamMember();
+    
+// });
 
 //Asks to create another team member
 const addTeamMember = () => {
@@ -126,6 +151,11 @@ const createIntern = () => {
             type: 'input',
             name: 'name',
             message: "What is the intern's name?",
+            // validate: function (input) { 
+            //     if(input !== typeof string) {
+            //         return 'You must enter a name'
+            //     }
+            // }
             },
             {
             type: 'input',
@@ -177,7 +207,7 @@ const moreTeamMembers = () => {
         });
 }
 
-
+//Takes all classes pushed into the team array, and passes that into the createCard function to write the html file
 const renderTeam = () => {
   let fakedHtml =  createCard(team);
   fs.writeFileSync('index.html', fakedHtml, function(err) {
@@ -185,4 +215,4 @@ const renderTeam = () => {
   })
  };
 
-// console.log(team);
+init();
