@@ -3,15 +3,14 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const inquirer = require('inquirer');
-const createCard = require('./dist/createCard');
+const createHtml = require('./dist/createHtml');
 const fs = require('fs');
 
-// const util = require('util');
-// const writeFileAsync = util.promisify(fs.writeFile);
-// const fs = require('fs');
-
-
 let team = [];
+
+const validateName = name => {
+    return name !== '' || 'Please enter a name.';
+}
 
 
 const init = () => {
@@ -21,6 +20,7 @@ const init = () => {
         type: 'input',
         name: 'name',
         message: "What is the manager's name?",
+        validate: validateName,
       },
       {
         type: 'input',
@@ -50,39 +50,6 @@ const init = () => {
   });
 }
 
-// inquirer
-//   .prompt([
-//     {
-//       type: 'input',
-//       name: 'name',
-//       message: "What is the manager's name?",
-//     },
-//     {
-//       type: 'input',
-//       message: "What is the manager's ID number?",
-//       name: 'id',
-      
-//     },
-//     {
-//       type: 'input',
-//       message: "What is the manager's email address?",
-//       name: 'email',
-    
-//     },
-
-//     {
-//         type: 'input',
-//         message: "What is the manager's office number?",
-//         name: 'office',
-      
-//       },
-//   ])
-//   .then((data) => {
-//     let manager = new Manager(data.name, data.id, data.email, data.office);
-//     team.push(manager);
-//     addTeamMember();
-    
-// });
 
 //Asks to create another team member
 const addTeamMember = () => {
@@ -209,8 +176,8 @@ const moreTeamMembers = () => {
 
 //Takes all classes pushed into the team array, and passes that into the createCard function to write the html file
 const renderTeam = () => {
-  let fakedHtml =  createCard(team);
-  fs.writeFileSync('index.html', fakedHtml, function(err) {
+  let mockHtml =  createHtml(team);
+  fs.writeFileSync('index.html', mockHtml, function(err) {
 
   })
  };
