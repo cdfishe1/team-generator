@@ -1,11 +1,11 @@
 //Guest TA Tom McCarthy helped develop this script for which I am very grateful!
 
 const createCard = teamArray => {
-
+  //Loops through the array of team members pushed from the prompts
   let cards = []
 
     for (let i = 0; i < teamArray.length; i++) {
-
+        //This creates a manager card based on the getRole of the teamArray member
         if (teamArray[i].getRole() === 'Manager') {
             cards.push(` <div class="card" style="width: 18rem; display: inline-block">
             <div class="card-header bg-danger">
@@ -18,7 +18,7 @@ const createCard = teamArray => {
               <li class="list-group-item">Office Number: ${teamArray[i].officeNumber}</li>
             </ul>
           </div>`)
-
+        //This creates an engineer card based on the getRole of the teamArray member
         } else if (teamArray[i].getRole() === "Engineer") {
             cards.push(` <div class="card" style="width: 18rem; display: inline-block">
         <div class="card-header bg-success">
@@ -32,6 +32,7 @@ const createCard = teamArray => {
         </ul>
       </div>`)
         } else {
+          //This creates an intern card based on the getRole of the teamArray member
           cards.push(` <div class="card" style="width: 18rem; display: inline-block">
       <div class="card-header bg-warning">
         <p class='text-dark'>Name: ${teamArray[i].name}</p>
@@ -48,7 +49,7 @@ const createCard = teamArray => {
 
     }
 
-
+    //This creates the html document with the processed cards being added in the container class below
     let html = `<!DOCTYPE html>
     <html lang="en">
     <head>

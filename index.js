@@ -9,18 +9,26 @@ const fs = require('fs');
 //Empty array where responses of prompt data will be pushed
 let team = [];
 
-//A function that will validate name inputs in prompts
+//A function that will validate prompts needing a string
 const validateString = string => {
     return string !== '' || 'This information is required.';
 }
 
-
+//A function that will validate if a number is entered in prompts needing a number
 const validateNumber = number => {
-    var reg = /^\d+$/;
-    return reg.test(number) || "Please enter a number";
+    const reg = /^\d+$/;
+    return reg.test(number) || "Please enter a number.";
+}
+
+//A function that will validate if an proper email is entered when prompted.
+const validateEmail = email => {
+    const reg = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/;
+    return reg.test(email) || "Please enter a valid email."
+
 }
 
 
+//Begins prompt process with asking for manager data
 const init = () => {
     inquirer
     .prompt([
@@ -41,6 +49,7 @@ const init = () => {
         type: 'input',
         message: "What is the manager's email address?",
         name: 'email',
+        validate: validateEmail,
       
       },
   
@@ -104,6 +113,7 @@ const createEngineer = () => {
             type: 'input',
             message: "What is the engineer's email address?",
             name: 'email',
+            validate: validateEmail,
             
             },
 
@@ -145,6 +155,7 @@ const createIntern = () => {
             type: 'input',
             message: "What is the intern's email address?",
             name: 'email',
+            validate: validateEmail,
             
             },
 
@@ -194,4 +205,5 @@ const renderTeam = () => {
   })
  };
 
+ //Begins execution of the prompt process
 init();
