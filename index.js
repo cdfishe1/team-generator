@@ -1,4 +1,4 @@
-// const Employee = require('./lib/Employee');
+// Modules needed for the script
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
@@ -6,10 +6,18 @@ const inquirer = require('inquirer');
 const createHtml = require('./dist/createHtml');
 const fs = require('fs');
 
+//Empty array where responses of prompt data will be pushed
 let team = [];
 
-const validateName = name => {
-    return name !== '' || 'Please enter a name.';
+//A function that will validate name inputs in prompts
+const validateString = string => {
+    return string !== '' || 'This information is required.';
+}
+
+
+const validateNumber = number => {
+    var reg = /^\d+$/;
+    return reg.test(number) || "Please enter a number";
 }
 
 
@@ -20,12 +28,13 @@ const init = () => {
         type: 'input',
         name: 'name',
         message: "What is the manager's name?",
-        validate: validateName,
+        validate: validateString,
       },
       {
         type: 'input',
         message: "What is the manager's ID number?",
         name: 'id',
+        validate: validateNumber,
         
       },
       {
@@ -39,6 +48,7 @@ const init = () => {
           type: 'input',
           message: "What is the manager's office number?",
           name: 'office',
+          validate: validateNumber,
         
         },
     ])
@@ -81,11 +91,13 @@ const createEngineer = () => {
             type: 'input',
             name: 'name',
             message: "What is the engineer's name?",
+            validate: validateString,
             },
             {
             type: 'input',
             message: "What is the engineer's ID number?",
             name: 'id',
+            validate: validateNumber,
             
             },
             {
@@ -99,6 +111,7 @@ const createEngineer = () => {
                 type: 'input',
                 message: "What is the engineer's GitHub id?",
                 name: 'github',
+                validate: validateString,
             
             },
         ])
@@ -118,16 +131,14 @@ const createIntern = () => {
             type: 'input',
             name: 'name',
             message: "What is the intern's name?",
-            // validate: function (input) { 
-            //     if(input !== typeof string) {
-            //         return 'You must enter a name'
-            //     }
-            // }
+            validate: validateString,
             },
+
             {
             type: 'input',
             message: "What is the intern's ID number?",
             name: 'id',
+            validate: validateNumber,
             
             },
             {
@@ -141,6 +152,7 @@ const createIntern = () => {
                 type: 'input',
                 message: "What is the intern's school?",
                 name: 'school',
+                validate: validateString,
             
             },
         ])
